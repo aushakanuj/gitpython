@@ -1,7 +1,3 @@
-i=0
-e=[]
-while i <=15:
-    if i %2==0:
-        e.append(i)
-    i=i+1
-print(e)
+import random
+for i in range(0,3):
+    print(random.randrange(0,45))
