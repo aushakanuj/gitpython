@@ -24,7 +24,7 @@ wn = turtle.Screen()
 t.shape('turtle')
 while isInScreen(wn,t):
     coin = random.randrange(0, 2)
-    
+
     if coin == 0:
         t.left(90)
     else:
