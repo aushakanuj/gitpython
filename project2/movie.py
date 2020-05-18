@@ -50,7 +50,6 @@ def get_movie_rating(movs):
                 ratings[i["Title"]]=(i["imdbRating"])
             else:    
                 ratings[i["Title"]]="0.0"
-    
     return ratings   
 
 def getSortedMovies(a):
