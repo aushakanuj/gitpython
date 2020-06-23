@@ -2,10 +2,10 @@ import re
 
 def stripsearch(a,b=" "):
 
-    ss=re.compile(rf"^({b}*)|({b}*)$")
+    ss=re.compile(rf"^{b}*|{b}*$")
     return ss.sub("",a)
 
-print(stripsearch("   helooo   "))
+print(stripsearch("   helooo   123","123"))
 
 # import re
 
