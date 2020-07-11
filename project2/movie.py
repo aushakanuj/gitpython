@@ -35,7 +35,6 @@ def get_related_titles(list_movies):
 
 
 def get_movie_rating(movs):
-    api = "e2a46df1"
     baseUrl = "http://www.omdbapi.com/?apikey=35c7267d&"
     rat = []
     ratings = {}

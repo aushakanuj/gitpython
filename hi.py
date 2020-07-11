@@ -1,3 +1,2 @@
-a = 10
-
-print(str(bin(10)))
+        a = 10
+        print(str(bin(10)))
