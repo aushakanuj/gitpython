@@ -23,5 +23,5 @@ def searchfile(filePath, fileName):
     return False
 
 
-print(searchfile("/Users/aushakanuz/Desktop", "1839622.jpg"))
+print(searchfile("/Users/aushakanuz/Desktop", "RESUME2020.pdf"))
 
