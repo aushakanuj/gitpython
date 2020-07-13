@@ -13,9 +13,9 @@ def get_movies_from_tastedive(a):
     param["limit"] = 5
     param["type"] = "movies"
     resp = requests.get(baseUrl, params=param)
-    print(resp.url)
-    p = resp.json()
-    return p
+    r = resp.json()
+    print(json.dumps(r, indent=2))
+    return
 
 
 def extract_movie_titles(a):

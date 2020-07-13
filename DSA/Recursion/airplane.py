@@ -23,3 +23,4 @@ class airportmayham(object):
 
 spacing = airportmayham([155, 55, 2, 96, 67, 203])
 print(spacing.maxpassengers())
+
