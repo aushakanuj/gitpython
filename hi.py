@@ -1,2 +1,2 @@
-        a = 10
-        print(str(bin(10)))
+for i in range(10):
+    print(i, sep=" ", end=" \n")
