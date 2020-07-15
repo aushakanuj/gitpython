@@ -6,6 +6,8 @@ cursor = connection.cursor()
 
 create_table = "CREATE TABLE users (id INT AUTO_INCREMENT, username VARCHAR(20) , password VARCHAR(50),PRIMARY KEY (id))"
 
+create_table = "CREATE TABLE users (id INT AUTO_INCREMENT, username VARCHAR(20) , password VARCHAR(50),PRIMARY KEY (id))"
+
 cursor.execute(create_table)
 
 user = (1, "jose", "1102")
