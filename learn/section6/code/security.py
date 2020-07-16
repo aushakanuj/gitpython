@@ -1,8 +1,8 @@
-from user import User
+from models.user import UserModel
 
 
 def authenticate(username, password):
-    user = User.findByUsername(username)
+    user = UserModel.findByUsername(username)
 
     if user and user.password == password:
 
@@ -10,8 +10,8 @@ def authenticate(username, password):
 
 
 def identity(payload):
-
+    print(payload)
     user_id = payload["identity"]
 
-    return User.findById(user_id)
+    return UserModel.findById(user_id)
 

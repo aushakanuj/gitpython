@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
-
-from flask_jwt import jwt_required
+from models.item import ItemModel
+from flask_jwt import jwt_required, current_identity
 import sqlite3
 
 items = []
@@ -15,70 +15,50 @@ class Item(Resource):
 
     @jwt_required()
     def get(self, name):
+        print(current_identity)
         try:
-            result = Item.findByname(name)
+            result = ItemModel.findByname(name)
         except:
             return {"message": "Error retrieving the data"}, 500
         if result:
             return result
         return {"message": "Item does not exist"}, 400
 
-    @classmethod
-    def findByname(clc, name):
-
-        connection = sqlite3.connect("data.db")
-        cursor = connection.cursor()
-        query = "SELECT * FROM items WHERE name=?"
-        result = cursor.execute(query, (name,))
-        result = result.fetchone()
-        connection.close()
-        if result:
-            return {"name": result[0], "price": result[1]}, 200
-
-    @classmethod
-    def writeItem(clc, name, request_data):
-
-        connection = sqlite3.connect("data.db")
-        cursor = connection.cursor()
-        insert_query = "INSERT INTO items VALUES(?,?)"
-        cursor.execute(insert_query, (name, request_data["price"]))
-        connection.commit()
-        connection.close()
-
-    @classmethod
-    def updateItem(clc, name, request_data):
-        connection = sqlite3.connect("data.db")
-        cursor = connection.cursor()
-        update_query = "UPDATE items SET price=? WHERE name=?"
-        cursor.execute(update_query, (request_data["price"], name))
-        connection.commit()
-        connection.close()
-
     def post(self, name):
-        result = Item.findByname(name)
+        result = ItemModel.findByname(name)
         if result:
             return {"message": "item already exists"}, 400
         request_data = Item.parser.parse_args()
+        a = ItemModel(name, request_data["price"])
         try:
-            Item.writeItem(name, request_data)
+            a.writeItem()
         except:
             return {"message": "Error occured while inserting the data"}, 500
         return {"message": "Item created"}, 201
 
     def put(self, name):
         try:
-            item = Item.findByname(name)
+            item = ItemModel.findByname(name)
         except:
             return {"message": "Error in the database"}, 500
         request_data = Item.parser.parse_args()
+        a = ItemModel(name, request_data["price"])
         if item:
-            Item.updateItem(name, request_data)
+            a.updateItem()
             return {"message": "Item modified"}, 200
         else:
-            Item.writeItem(name, request_data)
+            a.writeItem()
             return {"message": "item added to the list"}, 201
 
     def delete(self, name):
+        try:
+            item = ItemModel.findByname(name)
+            if item:
+                pass
+            else:
+                return {"message": "item not found"}, 400
+        except:
+            return {"message": "Error in deleting the item"}, 500
         try:
             connection = sqlite3.connect("data.db")
             cursor = connection.cursor()
