@@ -36,3 +36,4 @@ class ItemModel:
         cursor.execute(update_query, (self.price, self.name))
         connection.commit()
         connection.close()
+
