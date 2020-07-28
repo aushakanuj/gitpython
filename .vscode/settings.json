@@ -1,4 +1,13 @@
 {
-    "python.pythonPath": "venv/bin/python",
-    "python.formatting.provider": "black"
+    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+    "python.formatting.provider": "black",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "terminal.integrated.fontSize": 14,
+    "editor.fontFamily": "Fira code",
+    "editor.fontSize": 12.7,
+    "terminal.integrated.fontFamily": "Ubuntu Mono",
+    "terminal.integrated.env.osx": {
+    
+    }
 }
