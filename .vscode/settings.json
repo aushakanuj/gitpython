@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+    "python.pythonPath": "/Users/aushakanuz/Documents/gitpython/venv/bin/python3",
     "python.formatting.provider": "black",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
