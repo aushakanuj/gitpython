@@ -16,12 +16,9 @@ def get_movies_from_tastedive(a):
     r = resp.json()
     print(json.dumps(r, indent=2))
     return
-
-
 def extract_movie_titles(a):
     mov = [i["Name"] for i in a["Similar"]["Results"]]
     return mov
-
 
 def get_related_titles(list_movies):
     listOfRealtedMovies = []

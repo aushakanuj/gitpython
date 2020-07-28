@@ -5,7 +5,8 @@
     "python.linting.enabled": true,
     "terminal.integrated.fontSize": 14,
     "editor.fontFamily": "Fira code",
-    "editor.fontSize": 12.7,
+    "editor.fontSize": 12,
+    "editor.formatOnSave": true,
     "terminal.integrated.fontFamily": "Ubuntu Mono",
     "terminal.integrated.env.osx": {
     
