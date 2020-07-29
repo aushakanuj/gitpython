@@ -15,10 +15,13 @@ def get_movies_from_tastedive(a):
     resp = requests.get(baseUrl, params=param)
     r = resp.json()
     print(json.dumps(r, indent=2))
-    return
+    return r
+
+
 def extract_movie_titles(a):
     mov = [i["Name"] for i in a["Similar"]["Results"]]
     return mov
+
 
 def get_related_titles(list_movies):
     listOfRealtedMovies = []
