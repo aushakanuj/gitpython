@@ -10,6 +10,6 @@
     "terminal.integrated.fontFamily": "Ubuntu Mono",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.explorerKind": "external",
-    "editor.fontWeight": "500",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.fontWeight": "500"
 }
