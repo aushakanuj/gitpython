@@ -12,6 +12,12 @@ def homepage():
 
 @app.route("/movie/<string:name>")
 def search():
+
+    pass
+
+
+def getMovies(name):
+
     pass
 
 
