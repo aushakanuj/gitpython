@@ -1,0 +1,10 @@
+import base64
+
+f = open("lol.b64", "rb")
+
+s = f.read()
+
+data = base64.decodestring(s)
+
+image = open("deer.pdf", "wb")
+image.write(data)
