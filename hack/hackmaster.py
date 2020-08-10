@@ -1,0 +1,13 @@
+from __future__ import print_function
+import pickle
+import os.path
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+
+
+title = "My Document"
+body = {"title": title}
+doc = service.documents().create(body=body).execute()
+print("Created document with title: {0}".format(doc.get("title")))
+
