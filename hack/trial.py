@@ -8,9 +8,8 @@ scope = [
     "https://www.googleapis.com/auth/drive",
 ]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name(
-    "sheetconnection-286007-2ef7debc8d9c.json", scope
-)
+path = "/Users/aushakanuz/Downloads/sheetconnection-286007-2ef7debc8d9c.json"
+creds = ServiceAccountCredentials.from_json_keyfile_name(path, scope)
 
 client = gspread.authorize(creds)
 
