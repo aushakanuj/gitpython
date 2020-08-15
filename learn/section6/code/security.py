@@ -9,10 +9,8 @@ def authenticate(username, password):
         return user
 
 
-
 def identity(payload):
     print(payload)
     user_id = payload["identity"]
 
     return UserModel.findById(user_id)
-

@@ -10,13 +10,13 @@ scope = [
     "https://www.googleapis.com/auth/drive",
 ]
 
-path = "/Users/aushakanuz/Downloads/aushakanuj@gmail.com Firefox Recovery Codes.txt"
+path = "sheetconnection-286007-d81f3a7594fc.json"
 creds = ServiceAccountCredentials.from_json_keyfile_name(path, scope)
 
-client = gspread.authorize(creds)
+cl = gspread.authorize(creds)
 
-sheet = client.open("trial").sheet1
-sheet2 = client.open("trial").get_worksheet(2)
+sheet = cl.open("trial").sheet1
+sheet2 = cl.open("trial").get_worksheet(2)
 
 print(client.open("trial").worksheets())
 
@@ -42,5 +42,4 @@ while True:
             qnum += 1
             lines += 3
         except:
-
             raise ValueError

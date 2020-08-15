@@ -86,4 +86,3 @@ class ItemList(Resource):
             return {"items": items}
         except:
             return {"message": "Error getting the item"}, 500
-
