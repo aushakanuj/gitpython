@@ -2,11 +2,18 @@ from flask_restful import Resource, reqparse
 from models.item import ItemModel
 from flask_jwt import jwt_required, current_identity
 import sqlite3
+from db import db
+
 
 items = []
 
 
 class Item(Resource):
+
+    __tablename__ = "items"
+    id = db.column(db.Integer, primary_key=True)
+    username = db.column(db.String(80))
+    password = db.column(db.String(80))
 
     parser = reqparse.RequestParser()
     parser.add_argument(

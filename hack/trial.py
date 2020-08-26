@@ -18,7 +18,7 @@ cl = gspread.authorize(creds)
 sheet = cl.open("trial").sheet1
 sheet2 = cl.open("trial").get_worksheet(2)
 
-print(client.open("trial").worksheets())
+print(cl.open("trial").worksheets())
 
 recent_value = "start"
 qnum = 1
